@@ -13,18 +13,18 @@ class CreatePnas < ActiveRecord::Migration[6.0]
       t.string :country_code_3
       t.string :primary_language_name
       t.integer :population
-      t.boolean :window_10_40
-      t.string :location_in_country
+      t.boolean :in_window_10_40
+      t.text :location_in_country
       t.string :primary_religion
       t.integer :percent_evangelical
       t.integer :percent_adherents
-      t.boolean :least_reached
+      t.boolean :is_least_reached
       t.integer :joshua_project_scale
       t.integer :bible_status
       t.boolean :has_jesus_movie_translated
-      t.boolean :audio_recordings
+      t.boolean :has_audio_recordings
       t.string :new_testament_online_code
-      t.boolean :indigenous_code
+      t.boolean :is_indigenous
       t.string :latitude
       t.string :longitude
       t.string :photo_url
