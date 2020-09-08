@@ -1,0 +1,2 @@
+class Pna < ApplicationRecord
+end

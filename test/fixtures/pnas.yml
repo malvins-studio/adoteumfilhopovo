@@ -1,0 +1,63 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country_code_2: MyString
+  city: MyString
+  people_id3: 1
+  peop_name_in_country: MyString
+  people_id1: 1
+  affinity_bloc: MyString
+  people_id2: 1
+  people_cluster: MyString
+  primary_relig_in_people_cluster: MyString
+  country_code_3: MyString
+  primary_language_name: MyString
+  population: 1
+  window_10_40: false
+  location_in_country: MyString
+  primary_religion: MyString
+  percent_evangelical: 1
+  percent_adherents: 1
+  least_reached: false
+  joshua_project_scale: 1
+  bible_status: 1
+  has_jesus_movie_translated: false
+  audio_recordings: false
+  new_testament_online_code: MyString
+  indigenous_code: false
+  latitude: MyString
+  longitude: MyString
+  photo_url: MyString
+  map_url: MyString
+  flag_url: MyString
+
+two:
+  country_code_2: MyString
+  city: MyString
+  people_id3: 1
+  peop_name_in_country: MyString
+  people_id1: 1
+  affinity_bloc: MyString
+  people_id2: 1
+  people_cluster: MyString
+  primary_relig_in_people_cluster: MyString
+  country_code_3: MyString
+  primary_language_name: MyString
+  population: 1
+  window_10_40: false
+  location_in_country: MyString
+  primary_religion: MyString
+  percent_evangelical: 1
+  percent_adherents: 1
+  least_reached: false
+  joshua_project_scale: 1
+  bible_status: 1
+  has_jesus_movie_translated: false
+  audio_recordings: false
+  new_testament_online_code: MyString
+  indigenous_code: false
+  latitude: MyString
+  longitude: MyString
+  photo_url: MyString
+  map_url: MyString
+  flag_url: MyString
