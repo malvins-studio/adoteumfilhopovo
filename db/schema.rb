@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_143032) do
+ActiveRecord::Schema.define(version: 2020_09_08_153815) do
 
   create_table "pnas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "country_code_2"
-    t.string "city"
+    t.string "country"
     t.integer "people_id3"
     t.string "peop_name_in_country"
     t.integer "people_id1"

@@ -2,7 +2,7 @@ class CreatePnas < ActiveRecord::Migration[6.0]
   def change
     create_table :pnas do |t|
       t.string :country_code_2
-      t.string :city
+      t.string :country
       t.integer :people_id3
       t.string :peop_name_in_country
       t.integer :people_id1

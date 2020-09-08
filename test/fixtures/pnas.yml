@@ -2,7 +2,7 @@
 
 one:
   country_code_2: MyString
-  city: MyString
+  country: MyString
   people_id3: 1
   peop_name_in_country: MyString
   people_id1: 1
@@ -33,7 +33,7 @@ one:
 
 two:
   country_code_2: MyString
-  city: MyString
+  country: MyString
   people_id3: 1
   peop_name_in_country: MyString
   people_id1: 1
