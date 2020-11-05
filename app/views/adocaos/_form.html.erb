@@ -1,0 +1,32 @@
+<%= form_with(model: adocao, local: true) do |form| %>
+  <% if adocao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adocao.errors.count, "error") %> prohibited this adocao from being saved:</h2>
+
+      <ul>
+        <% adocao.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pna_id %>
+    <%= form.text_field :pna_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adotante_id %>
+    <%= form.text_field :adotante_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_adocao %>
+    <%= form.date_select :data_adocao %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

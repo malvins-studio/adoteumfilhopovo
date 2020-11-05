@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_162331) do
+ActiveRecord::Schema.define(version: 2020_09_20_090612) do
+
+  create_table "adocaos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "pna_id", null: false
+    t.bigint "adotante_id", null: false
+    t.date "data_adocao"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["adotante_id"], name: "index_adocaos_on_adotante_id"
+    t.index ["pna_id"], name: "index_adocaos_on_pna_id"
+  end
+
+  create_table "adotantes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome"
+    t.string "estado"
+    t.string "email"
+    t.string "telefone"
+    t.text "pedido_oracao"
+    t.boolean "marcou_comprometimento"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "configs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "lote_adocao", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pnas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "country_code_2"
@@ -44,6 +71,11 @@ ActiveRecord::Schema.define(version: 2020_09_08_162331) do
     t.string "flag_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "has_invalid_flag_url"
+    t.boolean "has_invalid_photo_url"
+    t.integer "total_adocoes", default: 0, null: false
   end
 
+  add_foreign_key "adocaos", "adotantes"
+  add_foreign_key "adocaos", "pnas"
 end

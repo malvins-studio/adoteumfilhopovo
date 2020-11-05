@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pna: one
+  adotante: one
+  data_adocao: 2020-09-15
+
+two:
+  pna: two
+  adotante: two
+  data_adocao: 2020-09-15

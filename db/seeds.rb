@@ -41,6 +41,8 @@ csv_pnas.each do |p|
    pna.longitude = p["Longitude"]
    pna.photo_url = "https://joshuaproject.net/assets/media/profiles/photos/#{p["PhotoAddress"]}" unless p["PhotoAddress"].nil?
    pna.map_url = "https://joshuaproject.net/assets/media/profiles/maps/#{p["MapAddress"]}" unless p["MapAddress"].nil?
-   pna.flag_url = "https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/#{p["ROG3"].downcase}.svg"
+    #utilizado em alguns casos apenas
+   # pna.flag_url = "https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/#{p["ROG3"].downcase}.svg"
+   pna.flag_url = "https://www.cia.gov/library/publications/the-world-factbook/attachments/flags/#{p["ROG3"]}-flag.jpg"
    pna.save
 end

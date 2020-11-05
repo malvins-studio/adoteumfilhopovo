@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adocaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pna</th>
+      <th>Adotante</th>
+      <th>Data adocao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adocaos.each do |adocao| %>
+      <tr>
+        <td><%= adocao.pna_id %></td>
+        <td><%= adocao.adotante_id %></td>
+        <td><%= adocao.data_adocao %></td>
+        <td><%= link_to 'Show', adocao %></td>
+        <td><%= link_to 'Edit', edit_adocao_path(adocao) %></td>
+        <td><%= link_to 'Destroy', adocao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adocao', new_adocao_path %>

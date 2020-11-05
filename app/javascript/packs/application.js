@@ -10,6 +10,9 @@ require("channels")
 
 import "bootstrap"
 import "../stylesheets/application"
+import "smoothscroll"
+
+import "./theme_custom"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()

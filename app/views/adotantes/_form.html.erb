@@ -1,0 +1,47 @@
+<%= form_with(model: adotante, local: true) do |form| %>
+  <% if adotante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adotante.errors.count, "error") %> prohibited this adotante from being saved:</h2>
+
+      <ul>
+        <% adotante.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pedido_oracao %>
+    <%= form.text_area :pedido_oracao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :marcou_comprometimento %>
+    <%= form.check_box :marcou_comprometimento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

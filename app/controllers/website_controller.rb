@@ -1,7 +1,47 @@
 class WebsiteController < ApplicationController
+  before_action :set_estados
+
   def index
+    @adotante = Adotante.new
   end
 
-  def adoption
+  def create
+    @adotante = Adotante.new(adotante_params)
+    persistence_ok = @adotante.save
+    adocao = adotar_povo_filho if persistence_ok
+    enviar_email_povo_filho_para_adotante adocao unless adocao.blank?
+    tratar_retorno persistence_ok
   end
+
+  private
+
+  def adotar_povo_filho
+    povo_filho = Pna.proximo_da_fila
+    @adotante.adotar povo_filho
+  end
+
+  def enviar_adocao adocao
+    AdocaoMailer.nova_adocao(adocao).deliver_later
+  end
+
+  def tratar_retorno(entity_persistence_ok)
+    respond_to do |format|
+      if entity_persistence_ok
+        format.html { redirect_to website_index_path, notice: 'true' }
+        format.json { render :show, status: :created, location: @adotante }
+      else
+        format.html { render :index }
+        format.json { render json: @adotante.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def set_estados
+    @estados = Estado.all
+  end
+
+  def adotante_params
+    params.require(:adotante).permit(:nome, :estado, :email, :telefone, :pedido_oracao, :marcou_comprometimento)
+  end
+
 end

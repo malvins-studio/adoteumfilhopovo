@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pna:</strong>
+  <%= @adocao.pna_id %>
+</p>
+
+<p>
+  <strong>Adotante:</strong>
+  <%= @adocao.adotante_id %>
+</p>
+
+<p>
+  <strong>Data adocao:</strong>
+  <%= @adocao.data_adocao %>
+</p>
+
+<%= link_to 'Edit', edit_adocao_path(@adocao) %> |
+<%= link_to 'Back', adocaos_path %>

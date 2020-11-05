@@ -1,0 +1,2 @@
+module AdocaosHelper
+end

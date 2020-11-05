@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @adotante.nome %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @adotante.estado %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @adotante.email %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @adotante.telefone %>
+</p>
+
+<p>
+  <strong>Pedido oracao:</strong>
+  <%= @adotante.pedido_oracao %>
+</p>
+
+<p>
+  <strong>Marcou comprometimento:</strong>
+  <%= @adotante.marcou_comprometimento %>
+</p>
+
+<%= link_to 'Edit', edit_adotante_path(@adotante) %> |
+<%= link_to 'Back', adotantes_path %>
