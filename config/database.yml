@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: adoteumpovo_org_br_production
-  username: adoteumpovo_org_br
-  password: <%= ENV['ADOTEUMPOVO_ORG_BR_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db[:db_name] %>
+  username: <%= Rails.application.credentials.db[:usr] %>
+  password: <%= Rails.application.credentials.db[:pwd] %>
+  socket: <%= Rails.application.credentials.db[:socket] %>

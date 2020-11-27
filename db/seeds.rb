@@ -9,7 +9,7 @@ require 'csv'
 
 Pna.delete_all
 
-csv_pnas = CSV.read "AllUnreachedByCountryListing.csv", headers:true
+csv_pnas = CSV.read "db/AllUnreachedByCountryListing.csv", headers:true
 
 csv_pnas.each do |p|
    pna = Pna.new
@@ -26,7 +26,7 @@ csv_pnas.each do |p|
    pna.primary_language_name = p["PrimaryLanguageName"]
    pna.population = p["Population"]
    pna.in_window_10_40 = p["10_40Window"].eql? "Y"
-   pna.location_in_country = p["LocationInCountry"]
+   # pna.location_in_country = p["LocationInCountry"]
    pna.primary_religion = p["PrimaryReligion"]
    pna.percent_evangelical = p["PercentEvangelical"]
    pna.percent_adherents = p["PercentAdherents"]
