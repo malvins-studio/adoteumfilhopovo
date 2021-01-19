@@ -7,12 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
+Adocao.delete_all
+
+Adotante.delete_all
+
 Pna.delete_all
 
 csv_pnas = CSV.read "db/AllUnreachedByCountryListing.csv", headers:true
 
+pna_id = 1
+
 csv_pnas.each do |p|
    pna = Pna.new
+   pna.id = pna_id
    pna.country_code_2 = p["ROG3"]
    pna.country = p["Ctry"]
    pna.people_id3 = p["PeopleID3"]
@@ -45,4 +52,5 @@ csv_pnas.each do |p|
    # pna.flag_url = "https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/#{p["ROG3"].downcase}.svg"
    pna.flag_url = "https://www.cia.gov/library/publications/the-world-factbook/attachments/flags/#{p["ROG3"]}-flag.jpg"
    pna.save
+   pna_id += 1
 end
