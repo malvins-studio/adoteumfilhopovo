@@ -8,12 +8,13 @@ class Adotante < ApplicationRecord
   has_many :pnas, :through => :adocao
 
   def adotar(povo_filho)
+    ENV["TZ"] ||= "America/Sao_Paulo" 
     adocao = nil
     unless povo_filho.nil?
       adocao = Adocao.new
       adocao.adotante = self
       adocao.pna = povo_filho
-      adocao.data_adocao = Date.new
+      adocao.data_adocao = Time.now
       adocao.save
     end
     adocao
