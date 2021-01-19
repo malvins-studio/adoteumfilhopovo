@@ -9,7 +9,7 @@ class WebsiteController < ApplicationController
     @adotante = Adotante.new(adotante_params)
     persistence_ok = @adotante.save
     adocao = adotar_povo_filho if persistence_ok
-    enviar_email_povo_filho_para_adotante adocao unless adocao.blank?
+    enviar_adocao( adocao ) unless adocao.blank?
     tratar_retorno persistence_ok
   end
 
