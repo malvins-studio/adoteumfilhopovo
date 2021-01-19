@@ -80,3 +80,5 @@ gerador*
 /config/credentials/production.key
 app/assets/images/prayer_cards/
 config/credentials/production.yml.enc
+
+/config/credentials/test.key
