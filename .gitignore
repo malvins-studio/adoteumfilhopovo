@@ -75,6 +75,7 @@ yarn-debug.log*
 /public/uploads
 
 .idea
+.idea/
 .DS_Store
 gerador*
 /config/credentials/production.key
