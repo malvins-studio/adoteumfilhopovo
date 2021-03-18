@@ -29,7 +29,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = 'https://adoteumpovo.org.br'
+  config.action_controller.asset_host = 'https://adoteumfilhopovo.org.br'
   config.action_mailer.asset_host = config.action_controller.asset_host
 
   # Specifies the header that your server uses for sending files.
