@@ -31,6 +31,6 @@ class Pna < ApplicationRecord
   }
 
   scope :proximo_da_fila, -> {
-    where(total_adocoes: Config.first.lote_adocao).order(:id).first
+    order(:population=>:desc).order(:percent_evangelical=>:asc).first
   }
 end

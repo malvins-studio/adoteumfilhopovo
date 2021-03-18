@@ -1,5 +1,6 @@
 class WebsiteController < ApplicationController
   before_action :set_estados
+  skip_before_action :authenticate_user!
 
   def index
     @adotante = Adotante.new
@@ -8,20 +9,21 @@ class WebsiteController < ApplicationController
   def create
     @adotante = Adotante.new(adotante_params)
     persistence_ok = @adotante.save
-    adocao = adotar_povo_filho if persistence_ok
-    enviar_adocao( adocao ) unless adocao.blank?
+    adocao = adotar_povo_filho(@adotante) if persistence_ok
+    enviar_adocao(adocao, @adotante) unless adocao.blank?
     tratar_retorno persistence_ok
   end
 
   private
 
-  def adotar_povo_filho
+  def adotar_povo_filho(adotante)
     povo_filho = Pna.proximo_da_fila
-    @adotante.adotar povo_filho
+    adotante.adotar povo_filho
+    povo_filho
   end
 
-  def enviar_adocao adocao
-    AdocaoMailer.nova_adocao(adocao).deliver_later
+  def enviar_adocao(adocao, adotante)
+    AdocaoMailer.nova_adocao(adocao, adotante).deliver_later
   end
 
   def tratar_retorno(entity_persistence_ok)

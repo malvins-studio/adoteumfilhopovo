@@ -17,6 +17,5 @@ class Adotante < ApplicationRecord
       adocao.data_adocao = Time.now
       adocao.save
     end
-    adocao
   end
 end
