@@ -63,7 +63,7 @@
 <!-- Sobre o projeto -->
 <div class="container">
   <section id="sobre-projeto-adote-um-povo" class="dark-grey-text">
-    <h2 class="text-center font-weight-bold mb-4 pb-2">Por que adotar um povo?</h2>
+    <h2 class="text-center font-weight-bold mb-4 pb-2">Por que adotar um filho povo?</h2>
     <!-- Section description -->
     <p class="text-center lead grey-text mx-auto mb-5">
       <a href="#ref-joshua-project" data-toggle="tooltip" data-placement="top" title="fonte: Joshua Project">
@@ -104,9 +104,8 @@
             <i class="fas fa-share fa-lg indigo-text"></i>
           </div>
           <div class="col-xl-10 col-md-11 col-10">
-            <h5 class="font-weight-bold mb-3">Tradução da Bíblia</h5>
-            <p class="grey-text">Atualmente, ao redor do mundo, temos 7.361 línguas vivas conhecidas, incluindo as línguas de sinais. Destas, 683 possuem a Bíblia completa traduzida, 1.534 o Novo Testamento, 1.133 contam com porções das Escrituras e as restantes 4.011 não possuem a Palavra de Deus. Os dados são do último relatório da Aliança Global Wycliffe, publicado em outubro de 2018. (fonte: <a href="https://wycliffe.org.br/sem-categoria/porque-traducao/
-" target="_blank">Missão Além</a>)</p>
+            <h5 class="font-weight-bold mb-3">Fazer discípulos e plantar igrejas</h5>
+            <p class="grey-text">"'Aqueles que nada ouviram' são a prioridade de Deus em relação à evangelização mundial. Isto pode ser perto ou pode ser longe." - Ronaldo Lidório (fonte: <a href="https://ronaldo.lidorio.com.br/wp/estrategias-e-plantio-de-igrejas-no-campo-missionario/" target="_blank">Estratégia e plantio de igrejas no campo missionário</a>)</p>
           </div>
         </div>
 
@@ -115,8 +114,8 @@
             <i class="fas fa-share fa-lg indigo-text"></i>
           </div>
           <div class="col-xl-10 col-md-11 col-10">
-            <h5 class="font-weight-bold mb-3">Fazer discípulos e plantar igrejas</h5>
-            <p class="grey-text">"'Aqueles que nada ouviram' são a prioridade de Deus em relação à evangelização mundial. Isto pode ser perto ou pode ser longe." - Ronaldo Lidório (fonte: <a href="https://ronaldo.lidorio.com.br/wp/estrategias-e-plantio-de-igrejas-no-campo-missionario/" target="_blank">Estratégia e plantio de igrejas no campo missionário</a>)</p>
+             <h5 class="font-weight-bold mb-3">Tradução da Bíblia</h5>
+            <p class="grey-text">Atualmente, ao redor do mundo, temos 7.361 línguas vivas conhecidas, incluindo as línguas de sinais. Destas, 683 possuem a Bíblia completa traduzida, 1.534 o Novo Testamento, 1.133 contam com porções das Escrituras e as restantes 4.011 não possuem a Palavra de Deus. Os dados são do último relatório da Aliança Global Wycliffe, publicado em outubro de 2018. (fonte: <a href="https://wycliffe.org.br/sem-categoria/porque-traducao/" target="_blank">Missão Além</a>)</p>
           </div>
         </div>
       </div>
@@ -225,7 +224,7 @@
       </div>
       <div class="col-lg-6 col-12">
         <div class="contact-form">
-          <h2 id="adotando-um-povo" class="mb-4">Decidiu adotar um PNA? Vamos lá!</h2>
+          <h2 id="adotando-um-povo" class="mb-4">Decidiu adotar um filho povo? Vamos lá!</h2>
           <p>Informe seus dados para <strong>receber por e-mail</strong> seu Filho Povo.</p>
           <%= form_for(@adotante, :url => "#{website_index_path}/#adotando-um-povo", html: { class: "was-validated" })  do |form| %>
             <% if @adotante.errors.any? %>
@@ -238,15 +237,6 @@
                     <li class="text-danger">- <%= message %></li>
                   <% end %>
                 </ul>
-              </div>
-            <% end %>
-
-            <% if flash.notice %>
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Parabéns!</strong> Seu filho povo foi enviado por e-mail!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
               </div>
             <% end %>
 
@@ -276,13 +266,21 @@
               <div class="col-12">
                 <div class="custom-control custom-checkbox mb-3">
                   <%= form.check_box :marcou_comprometimento, class: "custom-control-input", required: true %>
-                  <label class="custom-control-label text-justify" for="adotante_marcou_comprometimento">Eu entendi a proposta de ser um pai ou mãe de um Filho Povo. Sei que devo orar diariamente para que meu Filho Povo seja alcançado pelo Evangelho de Cristo. Entendo que meu compromisso se estende até que meu FIlho Povo seja alcançado ou até que Jesus volte, assim como é o compromisso de um pai e uma mãe para com seus filhos. <br><i>Sim, eu me comprometo com essa Aliança de Adoção.</i></label>
+                  <label class="custom-control-label text-justify" for="adotante_marcou_comprometimento">Eu entendi a proposta de ser um pai ou mãe de um Filho Povo. Sei que devo orar constantemente para que meu Filho Povo seja alcançado pelo Evangelho de Cristo. Entendo que meu compromisso se estende até que meu FIlho Povo seja alcançado ou até que Jesus volte, assim como é o compromisso de um pai e uma mãe para com seus filhos. <br><i>Sim, eu me comprometo com essa Aliança de Adoção.</i></label>
                   <hr>
                   <div class="invalid-feedback">É preciso confirmar seu compromisso!</div>
                 </div>
               </div>
+              <% if flash.notice %>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Parabéns!</strong> Seu filho povo foi enviado por e-mail!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% end %>
               <div class="col-12 mt-3">
-                <%= form.submit "Adotar um povo!", class: "btn custom-btn custom-btn-bg" %>
+                <%= form.submit "Adotar um filho povo!", class: "btn custom-btn custom-btn-bg" %>
               </div>
             </div>
           <% end %>
@@ -295,7 +293,7 @@
         <div class="row">
           <!-- amide -->
           <div id="ref-amide" class="col-md-6 mt-md-0 mt-3">
-            <h5 class="font-weight-bold">Idealizadora do <span class="adote-um-povo-color">adote um povo</span>:</h5>
+            <h5 class="font-weight-bold">Idealizadora do <span class="adote-um-povo-color">adote um filho povo</span>:</h5>
             <div class="flex-row mb-4">
               <div class="flex-center float-lg-left amide-brand mr-lg-3">
                 <%= image_tag "amide_logo.png", class: "mt-4",alt: "AMIDE" %>
