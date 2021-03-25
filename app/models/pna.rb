@@ -30,7 +30,10 @@ class Pna < ApplicationRecord
     povos_url_bandeira_invalida.count
   }
 
-  scope :proximo_da_fila, -> {
-    where(total_adocoes: Config.first.lote_adocao).order(:id).first
-  }
+  def self.proximo_da_fila
+    pna = Pna.order(:total_adocoes=>:asc).order(:percent_evangelical=>:asc).order(:population=>:desc).first
+    pna.total_adocoes += 1
+    pna.save
+    pna
+  end
 end

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'contato@adoteumpovo.org.br'
+  default from: 'contato@adoteumfilhopovo.org.br'
   layout 'mailer'
 end

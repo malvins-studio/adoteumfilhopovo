@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :adocaos
   resources :adotantes
   resources :website
