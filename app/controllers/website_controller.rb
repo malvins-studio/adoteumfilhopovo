@@ -4,11 +4,13 @@ class WebsiteController < ApplicationController
 
   def index
     @adotante = Adotante.new
+    @errors = false
   end
 
   def create
     @adotante = Adotante.new(adotante_params)
     persistence_ok = @adotante.save
+    @errors = !persistence_ok
     adocao = adotar_povo_filho(@adotante) if persistence_ok
     enviar_adocao(adocao, @adotante) unless adocao.blank?
     tratar_retorno persistence_ok
