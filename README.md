@@ -1,6 +1,6 @@
 # Adote um Filho Povo
 
-Um projeto idealizado pela Associação [Missionária para Difusão do Evangelho](https://amide.org.br) (AMIDE), baseado em dados do [Projeto Josué](https://joshuaproject.net).
+Um projeto idealizado pela [Associação Missionária para Difusão do Evangelho](https://amide.org.br) (AMIDE), baseado em dados do [Projeto Josué](https://joshuaproject.net).
 
 ## Stack
 - Ruby 3.0.0
