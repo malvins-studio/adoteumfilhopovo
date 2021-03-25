@@ -48,5 +48,10 @@ Finally, access it in the default uri:port
 http://localhost:3000
 ```
 
+## Troubleshooting
+Tentando depurar com Ruby 3 utilizando `debase`
+- Instalar debase fix: gem install debase -v 0.2.5.beta2
+- Ainda não está liberado debase para Ruby 3 especificamente
+
 ### Credits
 Many thanks to Ana Maria from Amide 
