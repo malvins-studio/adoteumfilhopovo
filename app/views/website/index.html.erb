@@ -45,7 +45,7 @@
             </div>
             <span class=""><br>povos não alcançados</span>
           </h1>
-          <p class="font-weight-bold">Que tal se tornar pai ou mãe de oração de um desses povos?</p>
+          <p class="font-weight-bold text-center">Que tal se tornar pai ou mãe de oração de um desses povos?</p>
           <div class="custom-btn-group">
             <a href="#adotar-um-filho-povo" class="btn custom-btn custom-btn-bg custom-btn-link">Adote agora um Filho Povo!</a>
           </div>
@@ -67,11 +67,12 @@
     <!-- Section description -->
     <p class="text-center lead grey-text mx-auto mb-5">
       <a href="#ref-joshua-project" data-toggle="tooltip" data-placement="top" title="fonte: Joshua Project">
-        Existem mais de 7.400  Povos Não Alcançados
+        Existem mais de 7.400 Povos Não Alcançados
       </a>
-      (PNAs), povos que ainda não foram alcançados pelo Evangelho de Jesus Cristo.
+      pelo Evangelho de Jesus Cristo (PNAs).
       <a href="#ref-amide" data-toggle="tooltip" data-placement="bottom" title="idealizadora: AMIDE">Entendemos</a>
-      que podemos, enquanto corpo de Cristo, fazer nossa parte na grande comissão de Jesus, obedecendo ao chamado de orar ao Senhor da seara e pedir que Ele mande mais trabalhadores para sua colheita (Mateus 9:38). <i>Para mais informações sobre definição de povos não alcançados, <a href="https://amide.org.br/blog/quem-sao-os-povos-nao-alcancados/" target="_blank">leia este artigo</a></i>.
+      que podemos, cada cristão, enquanto parte do corpo de Cristo, fazer nossa parte na grande comissão, obedecendo ao chamado de orar ao Senhor da seara e pedir que Ele mande mais trabalhadores para sua colheita (Mateus 9:38).
+      <br><small class="text-warning"><i>Para mais informações sobre definição de povos não alcançados, <a href="https://amide.org.br/blog/quem-sao-os-povos-nao-alcancados/" target="_blank">leia este artigo</a></i></small>.
     </p>
 
     <div class="row">
@@ -81,7 +82,7 @@
             <i class="fas fa-share fa-lg indigo-text"></i>
           </div>
           <div class="col-xl-10 col-md-11 col-10">
-            <h5 class="font-weight-bold mb-3">Grande Comissão!</h5>
+            <h5 class="font-weight-bold mb-3">A Grande Comissão!</h5>
             <p class="grey-text"><i>"Portanto ide, fazei discípulos de todas as nações, batizando-os em nome do Pai, e do Filho, e do Espírito Santo;
               Ensinando-os a guardar todas as coisas que eu vos tenho mandado; e eis que eu estou convosco todos os dias, até a consumação dos séculos. Amém."</i> (Mateus 28:19-20)</p>
           </div>
@@ -240,6 +241,15 @@
               </div>
             <% end %>
 
+            <% if flash.notice %>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Parabéns!</strong> Seu filho povo foi enviado por e-mail!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% end %>
+
             <div class="row">
 
               <div class="col-lg-12 col-12">
@@ -257,9 +267,7 @@
               <div class="col-lg-12 col-12">
                 <%= form.text_field :telefone, class: "form-control", placeholder: "Telefone (opcional)" %>
               </div>
-              <div class="col-12">
-                <%= form.text_area :pedido_oracao, class: "form-control font-weight-light", placeholder: "Informe aqui seu pedido de oração (Opcional)", rows: 6 %>
-              </div>
+
               <div class="col-12">
                 <div class="custom-control custom-checkbox mb-3">
                   <%= form.check_box :marcou_comprometimento, class: "custom-control-input", required: true %>
@@ -268,16 +276,9 @@
                   <div class="feedback">É preciso confirmar seu compromisso!</div>
                 </div>
               </div>
-              <% if flash.notice %>
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Parabéns!</strong> Seu filho povo foi enviado por e-mail!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <% end %>
-              <div class="col-12 mt-3">
-                <%= form.submit "Adotar um filho povo!", class: "btn custom-btn custom-btn-bg" %>
+
+              <div class="col-12 mt-3m">
+                  <%= form.submit "Adotar um filho povo!", class: "btn custom-btn custom-btn-bg" %>
               </div>
             </div>
           <% end %>
