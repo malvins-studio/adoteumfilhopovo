@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_074045) do
-
+ActiveRecord::Schema[7.1].define(version: 2021_03_18_074045) do
   create_table "adocaos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "pna_id", null: false
     t.bigint "adotante_id", null: false
     t.date "data_adocao"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["adotante_id"], name: "index_adocaos_on_adotante_id"
     t.index ["pna_id"], name: "index_adocaos_on_pna_id"
   end
@@ -29,14 +28,14 @@ ActiveRecord::Schema.define(version: 2021_03_18_074045) do
     t.string "telefone"
     t.text "pedido_oracao"
     t.boolean "marcou_comprometimento"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "configs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "lote_adocao", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pnas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -69,8 +68,8 @@ ActiveRecord::Schema.define(version: 2021_03_18_074045) do
     t.string "photo_url"
     t.string "map_url"
     t.string "flag_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "has_invalid_flag_url"
     t.boolean "has_invalid_photo_url"
     t.integer "total_adocoes", default: 0, null: false
@@ -80,10 +79,10 @@ ActiveRecord::Schema.define(version: 2021_03_18_074045) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "reset_password_sent_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
